@@ -14,25 +14,26 @@ export function FloatingObjects() {
     let raf = 0;
     const tick = () => {
       const c = containerRef.current;
+      const scrollY = window.scrollY;
       if (c) {
         const nodes = c.querySelectorAll<HTMLElement>("[data-fo]");
-        nodes.forEach((n) => {
+        nodes.forEach((n, idx) => {
           const r = n.getBoundingClientRect();
           const cx = r.left + r.width / 2;
           const cy = r.top + r.height / 2;
           const dx = cx - mouseRef.current.x;
           const dy = cy - mouseRef.current.y;
           const dist = Math.hypot(dx, dy);
-          if (dist < 300) {
+          if (dist < 300 && dist > 0) {
             const force = (1 - dist / 300) * 6;
-            const nx = (dx / dist) * force;
-            const ny = (dy / dist) * force;
-            n.style.setProperty("--mx", `${nx}px`);
-            n.style.setProperty("--my", `${ny}px`);
+            n.style.setProperty("--mx", `${(dx / dist) * force}px`);
+            n.style.setProperty("--my", `${(dy / dist) * force}px`);
           } else {
             n.style.setProperty("--mx", `0px`);
             n.style.setProperty("--my", `0px`);
           }
+          const speed = 0.1 + ((idx * 0.07) % 0.3);
+          n.style.setProperty("--sy", `${-scrollY * speed}px`);
         });
       }
       raf = requestAnimationFrame(tick);
@@ -52,8 +53,8 @@ export function FloatingObjects() {
       style={{ contain: "strict" }}
     >
       <style>{`
-        .fo { position: absolute; transform: translate(var(--mx,0), var(--my,0)); transition: transform 0.4s cubic-bezier(0.23,1,0.32,1); }
-        .fo-inner { animation-fill-mode: both; }
+        .fo { position: absolute; transform: translate(var(--mx,0), calc(var(--my,0) + var(--sy,0))); transition: transform 0.4s cubic-bezier(0.23,1,0.32,1); will-change: transform; }
+        .fo-inner { animation-fill-mode: both; will-change: transform; }
         @keyframes fo-drift-1 { 0%,100% { transform: translate(0,0) rotate(0); } 50% { transform: translate(18px,-12px) rotate(180deg); } }
         @keyframes fo-drift-2 { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.12); } }
         @keyframes fo-drift-3 { 0%,100% { transform: translateY(0) rotate(45deg); } 50% { transform: translateY(14px) rotate(405deg); } }

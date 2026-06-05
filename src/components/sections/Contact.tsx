@@ -11,9 +11,9 @@ export function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden py-32 px-6 md:px-10" style={{ background: "var(--bg-footer)" }}>
       {/* Ambient orbs */}
-      <div aria-hidden className="absolute -top-40 -left-20 w-[400px] h-[400px] rounded-full" style={{ background: "var(--accent-maroon)", opacity: 0.1, filter: "blur(80px)" }} />
-      <div aria-hidden className="absolute top-20 right-0 w-[300px] h-[300px] rounded-full" style={{ background: "var(--accent-lilac)", opacity: 0.08, filter: "blur(80px)" }} />
-      <div aria-hidden className="absolute bottom-0 left-1/3 w-[350px] h-[350px] rounded-full" style={{ background: "var(--accent-yellow)", opacity: 0.06, filter: "blur(80px)" }} />
+      <div aria-hidden className="absolute -top-40 -left-20 w-[400px] h-[400px] rounded-full animate-breathe" style={{ background: "var(--accent-maroon)", opacity: 0.12, filter: "blur(80px)" }} />
+      <div aria-hidden className="absolute top-20 right-0 w-[300px] h-[300px] rounded-full animate-float-y" style={{ background: "var(--accent-lilac)", opacity: 0.1, filter: "blur(80px)", animationDuration: "8s" }} />
+      <div aria-hidden className="absolute bottom-0 left-1/3 w-[350px] h-[350px] rounded-full animate-drift" style={{ background: "var(--accent-yellow)", opacity: 0.07, filter: "blur(80px)", animationDuration: "10s" }} />
 
       <div className="relative max-w-4xl mx-auto text-center">
         <div className="font-mono-jb text-[11px] tracking-[0.3em] uppercase" style={{ color: "var(--accent-blush)" }}>Contact</div>

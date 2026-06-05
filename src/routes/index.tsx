@@ -9,6 +9,7 @@ import { Skills } from "@/components/sections/Skills";
 import { Hackathons } from "@/components/sections/Hackathons";
 import { Certs } from "@/components/sections/Certs";
 import { Contact } from "@/components/sections/Contact";
+import { MarqueeBand } from "@/components/sections/MarqueeBand";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,8 +32,11 @@ function Index() {
         <Navbar />
         <main>
           <Hero />
+          <MarqueeBand items={["Design", "Build", "Ship", "Iterate", "Repeat"]} />
           <Process />
           <Projects />
+          <MarqueeBand reverse bg="var(--bg-section-4)" color="var(--accent-lilac-deep)"
+            items={["Frontend", "Full-Stack", "Machine Learning", "Social Impact", "Open Source"]} />
           <Skills />
           <Hackathons />
           <Certs />
