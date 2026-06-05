@@ -99,14 +99,32 @@ export function Hero() {
         {/* Right deco column */}
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.8, duration: 0.9 }}
           className="relative hidden md:block aspect-square">
-          <div className="absolute inset-0 rounded-full border-[3px]" style={{ borderColor: "var(--accent-lilac)", opacity: 0.4 }} />
-          <div className="absolute top-10 right-6 w-40 h-40 rounded-full" style={{ background: "var(--accent-yellow)", opacity: 0.28, filter: "blur(2px)" }} />
-          <div className="absolute bottom-10 left-2 w-56 h-56 rounded-full border-2" style={{ borderColor: "var(--accent-maroon-soft)" }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full"
-            style={{ background: "var(--accent-maroon)", opacity: 0.85 }} />
-          <div className="absolute bottom-8 right-12 w-3 h-3 rounded-full" style={{ background: "var(--accent-yellow-warm)" }} />
-          <div className="absolute top-20 left-12 w-2 h-2 rounded-full" style={{ background: "var(--accent-blush)" }} />
+          <div className="absolute inset-0 rounded-full border-[3px] animate-spin-slower" style={{ borderColor: "var(--accent-lilac)", opacity: 0.4, borderStyle: "dashed" }} />
+          <div className="absolute top-10 right-6 w-40 h-40 rounded-full animate-breathe" style={{ background: "var(--accent-yellow)", opacity: 0.28, filter: "blur(2px)" }} />
+          <div className="absolute bottom-10 left-2 w-56 h-56 rounded-full border-2 animate-spin-slow" style={{ borderColor: "var(--accent-maroon-soft)", borderStyle: "dashed" }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full animate-glow"
+            style={{ background: "var(--accent-maroon)", opacity: 0.9 }} />
+          <div className="absolute bottom-8 right-12 w-3 h-3 rounded-full animate-float-y" style={{ background: "var(--accent-yellow-warm)" }} />
+          <div className="absolute top-20 left-12 w-2 h-2 rounded-full animate-float-x" style={{ background: "var(--accent-blush)" }} />
+          {/* Orbiting satellites */}
+          <div className="absolute top-1/2 left-1/2">
+            <div className="animate-spin-slow" style={{ width: 280, height: 280, marginLeft: -140, marginTop: -140 }}>
+              <div className="w-3 h-3 rounded-full" style={{ background: "var(--accent-lilac-deep)" }} />
+            </div>
+          </div>
+          <div className="absolute top-1/2 left-1/2">
+            <div className="animate-spin-slower" style={{ width: 360, height: 360, marginLeft: -180, marginTop: -180, animationDirection: "reverse" }}>
+              <div className="absolute right-0 top-1/2 w-2.5 h-2.5 rounded-full" style={{ background: "var(--accent-yellow-warm)" }} />
+            </div>
+          </div>
         </motion.div>
+
+        {/* Scroll hint */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 font-mono-jb text-[10px] tracking-[0.3em]"
+          style={{ color: "var(--text-muted)" }}>
+          <span>SCROLL</span>
+          <span className="w-px h-8 block animate-scroll-hint" style={{ background: "var(--accent-maroon)" }} />
+        </div>
       </div>
     </section>
   );
