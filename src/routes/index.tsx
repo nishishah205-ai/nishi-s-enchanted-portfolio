@@ -9,6 +9,7 @@ import { Skills } from "@/components/sections/Skills";
 import { Hackathons } from "@/components/sections/Hackathons";
 import { Certs } from "@/components/sections/Certs";
 import { Contact } from "@/components/sections/Contact";
+import { MarqueeBand } from "@/components/sections/MarqueeBand";
 
 export const Route = createFileRoute("/")({
   head: () => ({
