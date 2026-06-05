@@ -32,8 +32,11 @@ function Index() {
         <Navbar />
         <main>
           <Hero />
+          <MarqueeBand items={["Design", "Build", "Ship", "Iterate", "Repeat"]} />
           <Process />
           <Projects />
+          <MarqueeBand reverse bg="var(--bg-section-4)" color="var(--accent-lilac-deep)"
+            items={["Frontend", "Full-Stack", "Machine Learning", "Social Impact", "Open Source"]} />
           <Skills />
           <Hackathons />
           <Certs />
