@@ -74,15 +74,17 @@ export function About() {
 
             {/* Video container */}
             <motion.div
-              style={{ rotateX: rx, rotateY: ry, transformStyle: "preserve-3d" }}
-              whileHover={{ scale: 1.04, y: -10 }}
-              transition={{ type: "spring", stiffness: 200, damping: 18 }}
-              className="group relative w-full h-full rounded-[32px] overflow-hidden border-2"
               style={{
+                rotateX: rx,
+                rotateY: ry,
+                transformStyle: "preserve-3d",
                 borderColor: "var(--border-maroon)",
                 background: "var(--bg-primary)",
                 boxShadow: "0 30px 60px -20px var(--glow-maroon), 0 0 0 8px color-mix(in oklab, var(--accent-lilac) 12%, transparent)",
               }}
+              whileHover={{ scale: 1.04, y: -10 }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+              className="group relative w-full h-full rounded-[32px] overflow-hidden border-2"
             >
               <video
                 src={avatarAsset.url}
