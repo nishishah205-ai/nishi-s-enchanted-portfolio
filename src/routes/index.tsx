@@ -3,7 +3,7 @@ import { FloatingObjects } from "@/components/FloatingObjects";
 import { CustomCursor } from "@/components/CustomCursor";
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
-import { Process } from "@/components/sections/Process";
+import { About } from "@/components/sections/About";
 import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
 import { Hackathons } from "@/components/sections/Hackathons";
@@ -33,7 +33,7 @@ function Index() {
         <main>
           <Hero />
           <MarqueeBand items={["Design", "Build", "Ship", "Iterate", "Repeat"]} />
-          <Process />
+          <About />
           <Projects />
           <MarqueeBand reverse bg="var(--bg-section-4)" color="var(--accent-lilac-deep)"
             items={["Frontend", "Full-Stack", "Machine Learning", "Social Impact", "Open Source"]} />

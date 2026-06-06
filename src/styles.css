@@ -82,6 +82,8 @@
   --accent-yellow-warm: #F0B429;
   --accent-blush: #F9A8C9;
   --accent-cream: #FFF3C4;
+  --accent-sage: #B8D8BE;
+  --accent-sage-deep: #7FB28A;
 
   --text-primary: #2A0A18;
   --text-secondary: #5C2A40;
@@ -97,7 +99,42 @@
   --glow-maroon: rgba(123, 28, 62, 0.18);
   --glow-lilac: rgba(167, 139, 250, 0.20);
   --glow-yellow: rgba(245, 213, 71, 0.25);
+  --glow-sage: rgba(184, 216, 190, 0.45);
 }
+
+.dark {
+  --bg-primary: #15090F;
+  --bg-section-2: #1B0E18;
+  --bg-section-3: #1A1014;
+  --bg-section-4: #1E0F1A;
+  --bg-section-5: #17090E;
+  --bg-footer: #0A0408;
+
+  --accent-maroon: #D45077;
+  --accent-maroon-mid: #C45C7A;
+  --accent-maroon-soft: #E889A3;
+  --accent-lilac: #B9A4FF;
+  --accent-lilac-deep: #A78BFA;
+  --accent-yellow: #F5D547;
+  --accent-yellow-warm: #FFD96A;
+
+  --text-primary: #FAEFE6;
+  --text-secondary: #E8C9D6;
+  --text-body: #D9C5CE;
+  --text-muted: #8A6878;
+  --text-lilac: #C9B6FF;
+  --text-yellow: #F5D547;
+
+  --border-lilac: #3A2A55;
+  --border-maroon: #5A2A3E;
+  --border-yellow: #6A5520;
+
+  --glow-maroon: rgba(212, 80, 119, 0.35);
+  --glow-lilac: rgba(167, 139, 250, 0.30);
+  --glow-yellow: rgba(245, 213, 71, 0.30);
+}
+
+html, body { transition: background-color 0.4s ease, color 0.4s ease; }
 
 @layer base {
   * {

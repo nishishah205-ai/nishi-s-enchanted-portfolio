@@ -1,8 +1,9 @@
 import { Code2 } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const links = [
+  { label: "ABOUT", href: "#about" },
   { label: "WORK", href: "#work" },
-  { label: "PROCESS", href: "#process" },
   { label: "ARSENAL", href: "#arsenal" },
   { label: "RECOGNITION", href: "#recognition" },
   { label: "CONTACT", href: "#contact" },
@@ -25,10 +26,13 @@ export function Navbar() {
           </a>
         ))}
       </div>
-      <div className="flex items-center gap-2 px-3 py-2 rounded-full"
-        style={{ background: "var(--text-primary)", color: "var(--accent-yellow)" }}>
-        <Code2 className="w-3.5 h-3.5" />
-        <span className="font-mono-jb text-[10px] tracking-wider">DEV</span>
+      <div className="flex items-center gap-3">
+        <ThemeToggle />
+        <div className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-full"
+          style={{ background: "var(--text-primary)", color: "var(--accent-yellow)" }}>
+          <Code2 className="w-3.5 h-3.5" />
+          <span className="font-mono-jb text-[10px] tracking-wider">DEV</span>
+        </div>
       </div>
     </nav>
   );
