@@ -263,7 +263,7 @@ html, body { transition: background-color 0.4s ease, color 0.4s ease; }
 @utility hover-lift {
   transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
 }
-@utility hover-lift:hover {
+.hover-lift:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 30px -12px var(--glow-maroon);
 }
