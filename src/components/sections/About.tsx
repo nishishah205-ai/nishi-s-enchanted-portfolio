@@ -44,7 +44,7 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
-            className="relative mx-auto w-full max-w-[440px]"
+            className="relative mx-auto w-full max-w-[502px]"
           >
             {/* Soft radial gradient wash filling the column space */}
             <div aria-hidden className="absolute -inset-24 pointer-events-none -z-10"
@@ -116,22 +116,12 @@ export function About() {
                 />
               ))}
 
-              {/* Gradient depth backdrop */}
-              <div aria-hidden className="absolute inset-0 rounded-[40px] pointer-events-none"
-                style={{ background: "linear-gradient(160deg, color-mix(in oklab, var(--accent-lilac) 14%, transparent), transparent 50%, color-mix(in oklab, var(--accent-maroon) 12%, transparent))" }} />
-
-              {/* Video container — portrait, cinematic */}
+              {/* Video container — portrait, dissolved into composition */}
               <motion.div
-                style={{
-                  x: tx,
-                  y: ty,
-                  borderColor: "var(--border-maroon)",
-                  background: "var(--bg-primary)",
-                  boxShadow: "0 40px 80px -24px var(--glow-maroon), 0 0 0 10px color-mix(in oklab, var(--accent-lilac) 10%, transparent), inset 0 0 0 1px color-mix(in oklab, var(--accent-cream) 40%, transparent)",
-                }}
+                style={{ x: tx, y: ty }}
                 whileHover={{ scale: 1.04, y: -10 }}
                 transition={{ type: "spring", stiffness: 180, damping: 18 }}
-                className="relative w-full h-full rounded-[40px] overflow-hidden border"
+                className="relative w-full h-full"
               >
                 <video
                   src={avatarAsset.url}
@@ -141,21 +131,36 @@ export function About() {
                   playsInline
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   style={{
-                    WebkitMaskImage: "radial-gradient(ellipse 78% 88% at center, black 55%, transparent 92%)",
-                    maskImage: "radial-gradient(ellipse 78% 88% at center, black 55%, transparent 92%)",
+                    WebkitMaskImage: "radial-gradient(ellipse at center, black 50%, transparent 82%)",
+                    maskImage: "radial-gradient(ellipse at center, black 50%, transparent 82%)",
                   }}
                 />
-                {/* Soft top + bottom tint for editorial feel */}
+                {/* Soft tint for editorial feel — follows the mask */}
                 <div aria-hidden className="absolute inset-0 pointer-events-none"
-                  style={{ background: "linear-gradient(180deg, color-mix(in oklab, var(--accent-lilac) 8%, transparent), transparent 30%, transparent 70%, color-mix(in oklab, var(--accent-maroon) 22%, transparent))" }} />
+                  style={{
+                    background: "linear-gradient(180deg, color-mix(in oklab, var(--accent-lilac) 8%, transparent), transparent 30%, transparent 70%, color-mix(in oklab, var(--accent-maroon) 22%, transparent))",
+                    WebkitMaskImage: "radial-gradient(ellipse at center, black 50%, transparent 82%)",
+                    maskImage: "radial-gradient(ellipse at center, black 50%, transparent 82%)",
+                  }} />
 
                 {/* Live badge */}
-                <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-mono-jb text-[10px] tracking-wider backdrop-blur-md"
+                <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-mono-jb text-[10px] tracking-wider backdrop-blur-md z-20"
                   style={{ background: "color-mix(in oklab, var(--bg-primary) 70%, transparent)", color: "var(--text-primary)" }}>
                   <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-sage-deep)" }} />
                   LIVE · 2026
                 </div>
               </motion.div>
+
+              {/* Foreground ring overlay — sits IN FRONT of avatar to break container perception */}
+              <motion.div
+                aria-hidden
+                initial={{ opacity: 0, scale: 0.94 }}
+                whileInView={{ opacity: 0.38, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.55, duration: 0.9 }}
+                className="absolute -inset-x-4 -inset-y-6 rounded-[50%] border animate-spin-slow pointer-events-none z-10"
+                style={{ borderColor: "var(--accent-lilac)", borderStyle: "dashed", animationDirection: "reverse", animationDuration: "55s" }}
+              />
             </div>
           </motion.div>
 
