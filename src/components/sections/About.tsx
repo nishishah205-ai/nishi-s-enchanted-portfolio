@@ -98,6 +98,12 @@ export function About() {
                 { t: "88%", l: "8%", d: "0.6s", c: "var(--accent-maroon-soft)" },
                 { t: "96%", l: "78%", d: "1.6s", c: "var(--accent-lilac)" },
                 { t: "30%", l: "104%", d: "1.0s", c: "var(--accent-sage-deep)" },
+                { t: "-4%", l: "40%", d: "1.4s", c: "var(--accent-lilac)" },
+                { t: "-2%", l: "70%", d: "0.2s", c: "var(--accent-yellow)" },
+                { t: "55%", l: "-6%", d: "1.8s", c: "var(--accent-lilac)" },
+                { t: "12%", l: "-5%", d: "0.9s", c: "var(--accent-sage)" },
+                { t: "82%", l: "102%", d: "1.3s", c: "var(--accent-yellow)" },
+                { t: "102%", l: "30%", d: "0.5s", c: "var(--accent-sage-deep)" },
               ].map((p, i) => (
                 <motion.span
                   key={i}
