@@ -46,6 +46,10 @@ export function About() {
             transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
             className="relative mx-auto w-full max-w-[440px]"
           >
+            {/* Soft radial gradient wash filling the column space */}
+            <div aria-hidden className="absolute -inset-24 pointer-events-none -z-10"
+              style={{ background: "radial-gradient(ellipse at center, color-mix(in oklab, var(--accent-lilac) 10%, transparent), transparent 65%)" }} />
+
             {/* Wrapper for rings + container — sized to portrait */}
             <div
               ref={ref}
