@@ -46,6 +46,10 @@ export function About() {
             transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
             className="relative mx-auto w-full max-w-[440px]"
           >
+            {/* Soft radial gradient wash filling the column space */}
+            <div aria-hidden className="absolute -inset-24 pointer-events-none -z-10"
+              style={{ background: "radial-gradient(ellipse at center, color-mix(in oklab, var(--accent-lilac) 10%, transparent), transparent 65%)" }} />
+
             {/* Wrapper for rings + container — sized to portrait */}
             <div
               ref={ref}
@@ -54,6 +58,15 @@ export function About() {
               className="relative group"
               style={{ aspectRatio: "3 / 4.4" }}
             >
+              {/* Outermost (yellow) wide elliptical ring */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 0.22, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.45, duration: 0.9 }}
+                className="absolute -inset-x-20 -inset-y-24 rounded-[50%] border animate-spin-slower pointer-events-none"
+                style={{ borderColor: "var(--accent-yellow)", borderStyle: "dashed", animationDuration: "70s" }}
+              />
               {/* Outer primary (maroon) elliptical ring — clockwise */}
               <div
                 className="absolute -inset-x-8 -inset-y-10 rounded-[50%] border-2 animate-spin-slower pointer-events-none transition-[animation-duration] group-hover:[animation-duration:40s]"
@@ -69,8 +82,11 @@ export function About() {
                 style={{ borderColor: "var(--accent-lilac)", borderStyle: "dotted", animationDirection: "reverse" }}
               />
 
-              {/* Multi-layer glow */}
-              <div aria-hidden className="absolute -inset-10 blur-3xl pointer-events-none"
+              {/* Multi-layer glow with slow breathing pulse */}
+              <motion.div aria-hidden
+                animate={{ opacity: [0.85, 1, 0.85] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -inset-10 blur-3xl pointer-events-none"
                 style={{ background: "radial-gradient(ellipse at 30% 20%, var(--glow-maroon), transparent 60%), radial-gradient(ellipse at 70% 80%, var(--glow-lilac), transparent 60%), radial-gradient(ellipse at 50% 50%, var(--glow-yellow), transparent 70%)" }} />
 
               {/* Ambient particles */}
@@ -82,6 +98,12 @@ export function About() {
                 { t: "88%", l: "8%", d: "0.6s", c: "var(--accent-maroon-soft)" },
                 { t: "96%", l: "78%", d: "1.6s", c: "var(--accent-lilac)" },
                 { t: "30%", l: "104%", d: "1.0s", c: "var(--accent-sage-deep)" },
+                { t: "-4%", l: "40%", d: "1.4s", c: "var(--accent-lilac)" },
+                { t: "-2%", l: "70%", d: "0.2s", c: "var(--accent-yellow)" },
+                { t: "55%", l: "-6%", d: "1.8s", c: "var(--accent-lilac)" },
+                { t: "12%", l: "-5%", d: "0.9s", c: "var(--accent-sage)" },
+                { t: "82%", l: "102%", d: "1.3s", c: "var(--accent-yellow)" },
+                { t: "102%", l: "30%", d: "0.5s", c: "var(--accent-sage-deep)" },
               ].map((p, i) => (
                 <motion.span
                   key={i}
@@ -118,6 +140,10 @@ export function About() {
                   muted
                   playsInline
                   className="absolute inset-0 w-full h-full object-cover object-center"
+                  style={{
+                    WebkitMaskImage: "radial-gradient(ellipse 78% 88% at center, black 55%, transparent 92%)",
+                    maskImage: "radial-gradient(ellipse 78% 88% at center, black 55%, transparent 92%)",
+                  }}
                 />
                 {/* Soft top + bottom tint for editorial feel */}
                 <div aria-hidden className="absolute inset-0 pointer-events-none"
