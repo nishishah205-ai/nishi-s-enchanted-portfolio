@@ -140,6 +140,10 @@ export function About() {
                   muted
                   playsInline
                   className="absolute inset-0 w-full h-full object-cover object-center"
+                  style={{
+                    WebkitMaskImage: "radial-gradient(ellipse 78% 88% at center, black 55%, transparent 92%)",
+                    maskImage: "radial-gradient(ellipse 78% 88% at center, black 55%, transparent 92%)",
+                  }}
                 />
                 {/* Soft top + bottom tint for editorial feel */}
                 <div aria-hidden className="absolute inset-0 pointer-events-none"
