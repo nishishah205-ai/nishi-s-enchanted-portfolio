@@ -58,6 +58,15 @@ export function About() {
               className="relative group"
               style={{ aspectRatio: "3 / 4.4" }}
             >
+              {/* Outermost (yellow) wide elliptical ring */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 0.22, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.45, duration: 0.9 }}
+                className="absolute -inset-x-20 -inset-y-24 rounded-[50%] border animate-spin-slower pointer-events-none"
+                style={{ borderColor: "var(--accent-yellow)", borderStyle: "dashed", animationDuration: "70s" }}
+              />
               {/* Outer primary (maroon) elliptical ring — clockwise */}
               <div
                 className="absolute -inset-x-8 -inset-y-10 rounded-[50%] border-2 animate-spin-slower pointer-events-none transition-[animation-duration] group-hover:[animation-duration:40s]"
@@ -73,8 +82,11 @@ export function About() {
                 style={{ borderColor: "var(--accent-lilac)", borderStyle: "dotted", animationDirection: "reverse" }}
               />
 
-              {/* Multi-layer glow */}
-              <div aria-hidden className="absolute -inset-10 blur-3xl pointer-events-none"
+              {/* Multi-layer glow with slow breathing pulse */}
+              <motion.div aria-hidden
+                animate={{ opacity: [0.85, 1, 0.85] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -inset-10 blur-3xl pointer-events-none"
                 style={{ background: "radial-gradient(ellipse at 30% 20%, var(--glow-maroon), transparent 60%), radial-gradient(ellipse at 70% 80%, var(--glow-lilac), transparent 60%), radial-gradient(ellipse at 50% 50%, var(--glow-yellow), transparent 70%)" }} />
 
               {/* Ambient particles */}
