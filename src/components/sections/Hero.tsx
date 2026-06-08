@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import { HeroRunner } from "@/components/Mascots";
 
 function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   const [v, setV] = useState(0);
