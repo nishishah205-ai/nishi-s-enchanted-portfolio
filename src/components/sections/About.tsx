@@ -31,7 +31,9 @@ export function About() {
 
   return (
     <section id="about" className="relative py-28 px-6 md:px-10" style={{ background: "var(--bg-section-2)" }}>
+      <AboutFloater />
       <div className="max-w-6xl mx-auto">
+
         <div className="text-center mb-16">
           <span className="font-mono-jb text-[11px] tracking-[0.25em] uppercase" style={{ color: "var(--text-lilac)" }}>
             [ personal branding · interactive motion ]
