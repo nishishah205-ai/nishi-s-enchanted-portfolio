@@ -177,6 +177,7 @@ export function Projects() {
               >
                 <div className="absolute left-0 top-0 bottom-0 w-1 transition-all group-hover:w-2"
                   style={{ background: p.accent, boxShadow: `0 0 16px ${p.accent}` }} />
+                {i === 0 && <ProjectsPeek />}
 
                 {/* Content */}
                 <div className="p-8 md:p-10 order-2 md:order-1">
