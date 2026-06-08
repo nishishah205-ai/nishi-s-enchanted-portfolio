@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { ContactCelebrate } from "@/components/Mascots";
 
 const links = [
   { label: "Email", href: "mailto:nishi@example.com" },
