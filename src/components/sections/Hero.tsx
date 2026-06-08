@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import { HeroRunner } from "@/components/Mascots";
 
 function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   const [v, setV] = useState(0);
@@ -29,6 +30,7 @@ export function Hero() {
   return (
     <section id="top" className="relative min-h-screen flex items-center pt-28 pb-20 px-6 md:px-10"
       style={{ background: "var(--bg-primary)" }}>
+      <HeroRunner />
       {/* Big watermark */}
       <div aria-hidden className="absolute inset-x-0 top-24 text-center pointer-events-none select-none">
         <span className="font-display font-bold tracking-[0.05em]"

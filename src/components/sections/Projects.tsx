@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink, Star } from "lucide-react";
 import { useState } from "react";
+import { ProjectsPeek } from "@/components/Mascots";
 
 type Category = "All" | "Frontend" | "Full Stack" | "AI & ML" | "Open Source";
 
@@ -176,6 +177,7 @@ export function Projects() {
               >
                 <div className="absolute left-0 top-0 bottom-0 w-1 transition-all group-hover:w-2"
                   style={{ background: p.accent, boxShadow: `0 0 16px ${p.accent}` }} />
+                {i === 0 && <ProjectsPeek />}
 
                 {/* Content */}
                 <div className="p-8 md:p-10 order-2 md:order-1">
