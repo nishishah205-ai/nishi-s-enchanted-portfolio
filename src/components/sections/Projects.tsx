@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink, Star } from "lucide-react";
 import { useState } from "react";
+import { ProjectsPeek } from "@/components/Mascots";
 
 type Category = "All" | "Frontend" | "Full Stack" | "AI & ML" | "Open Source";
 
