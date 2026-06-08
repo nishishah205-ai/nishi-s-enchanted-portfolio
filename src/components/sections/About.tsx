@@ -2,6 +2,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowDown, Mail, MapPin, GraduationCap, Code2, Trophy, GitBranch, Building2, Award } from "lucide-react";
 import { useRef } from "react";
 import avatarAsset from "@/assets/avatar-motion.mp4.asset.json";
+import { AboutFloater } from "@/components/Mascots";
 
 const facts = [
   { icon: MapPin, label: "Location", value: "Mumbai, India" },
